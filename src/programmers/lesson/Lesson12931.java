@@ -1,6 +1,4 @@
-package programmers.pretest;
-
-import java.util.Scanner;
+package programmers.lesson;
 
 public class Lesson12931 {
     public int solution(int n) {
