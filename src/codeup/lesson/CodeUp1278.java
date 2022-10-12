@@ -10,6 +10,7 @@ package codeup.lesson;
 
 4322 ----> 4   (4자릿수)
  */
+
 import java.util.Scanner;
 
 public class CodeUp1278 {
