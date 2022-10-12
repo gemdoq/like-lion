@@ -3,7 +3,6 @@ package codeup.lesson;
 // 부호를 바꿔서 최소값을 구하는 코드로 복사-붙여넣기를 하겠지만,
 // 결국 기술 부채를 만드는 것이므로 확장성을 고려한 코드를 작성하려는 고민을 해야 함
 
-// interface작성
 interface Compare {
     boolean doSomething(int valueA, int valueB);
 }
