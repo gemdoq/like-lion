@@ -3,7 +3,7 @@ package codeup.lesson;
 public class CodeUp2081 {
     public int getMax(int[] arr) {
         // loop 구성
-        int maxValue = 0;
+        int maxValue = arr[0]; // arr이 모두 음수인 경우 0으로 하면 0이 max
         for(int i = 0; i < arr.length; i++) {
             if(arr[i] > maxValue) {
                 maxValue = arr[i];
@@ -21,5 +21,4 @@ public class CodeUp2081 {
             System.out.println("test fail");
         }
     }
-
 }
