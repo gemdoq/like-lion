@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.line.parser.HospitalParserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-13T02:44:50" hostname="As-MacBook-Pro.local" time="0.023">
+  <properties/>
+  <testcase name="test doing well parse id" classname="com.line.parser.HospitalParserTest" time="0.023"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
