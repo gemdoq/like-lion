@@ -2,6 +2,8 @@ package week5.day3.algorithm;
 //  static method는 main말고는 쓰지마세요.
 //  int형 array를 return하고 int형 array를 받는 sort() 메소드를 만드세요
 
+import java.util.Arrays;
+
 public class lesson1 {
     public int[] sort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
@@ -21,6 +23,6 @@ public class lesson1 {
 
         lesson1 ls1 = new lesson1();
         int[] result = ls1.sort(arr);
-        System.out.println(result);
+        System.out.println(Arrays.toString(result));
     }
 }
