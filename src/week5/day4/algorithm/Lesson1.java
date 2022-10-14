@@ -16,8 +16,8 @@ public class Lesson1 {
     public static void main(String[] args) {
         int[] arr = {8,5,6,2,4};
         Lesson1 lesson1 = new Lesson1();
-        lesson1.sort(arr);
+        int[] result = lesson1.sort(arr);
 
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(result));
     }
 }
