@@ -6,9 +6,7 @@ public class IncreasingTower {
         this.s = s;
     }
 
-    public void setS(String s) {
-        this.s = s;
-    }
+    public void setS(String s) { this.s = s; }
 
     public void print(int n) {
         for(int i = 0; i < n; i++) {
