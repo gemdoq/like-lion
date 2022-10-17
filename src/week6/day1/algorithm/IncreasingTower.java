@@ -15,7 +15,7 @@ public class IncreasingTower {
             for(int j = 0; j < i+1; j++) {
                 System.out.print(s);
             }
-            System.out.println();
+            System.out.printf("\n");
         }
     }
 }
