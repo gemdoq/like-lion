@@ -1,7 +1,7 @@
 package week6.day1.algorithm;
 
-public class StarPrint1 {
-    public static void main(String[] args) {
+public class IncreasingTower {
+    public void print() {
         System.out.println("*");
         System.out.println("**");
         System.out.println("***");
