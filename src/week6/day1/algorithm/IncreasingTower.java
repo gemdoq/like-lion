@@ -1,10 +1,12 @@
 package week6.day1.algorithm;
 
 public class IncreasingTower {
-    public void print() {
-        System.out.println("*");
-        System.out.println("**");
-        System.out.println("***");
-        System.out.println("****");
+    public void print(int n) {
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < i+1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 }
