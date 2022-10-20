@@ -4,6 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.EmptyStackException;
+import java.util.Stack;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class Stack02Test {
@@ -34,5 +37,28 @@ class Stack02Test {
     void pushAndPop() {
         assertEquals(20, stack02.pop());
         assertEquals(10, stack02.pop());
+        assertThrows(EmptyStackException.class, ()-> {
+            stack02.pop();
+        });
+    }
+
+    @Test
+    @DisplayName("is stack empty")
+    void isEmpty() {
+        Stack02 stack02 = new Stack02();
+        assertTrue(stack02.isEmpty());
+        stack02.push(10);
+        assertFalse(stack02.isEmpty());
+        stack02.pop();
+        assertTrue(stack02.isEmpty());
+    }
+
+    @Test
+    @DisplayName("what happen if pop when stack is empty")
+    void realStack() {
+        Stack<Integer> stack = new Stack<>();
+        assertThrows(EmptyStackException.class, ()-> {
+            stack02.pop();
+        });
     }
 }
