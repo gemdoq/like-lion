@@ -4,6 +4,7 @@ public class StarPrinter {
     public static void main(String[] args) {
         IncreasingPyramid increasingPyramid = new IncreasingPyramid(5, "*");
         increasingPyramid.print();
+
 //        IncreasingTower increasingTower = new IncreasingTower("s");
 //        increasingTower.print(3);
 //

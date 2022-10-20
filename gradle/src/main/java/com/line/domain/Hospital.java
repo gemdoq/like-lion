@@ -5,7 +5,7 @@ public class Hospital {
     private String address;
     private String district;
     private String category;
-    private Integer emergencyRoom;
+    private Integer emergencyRoom; // snake camel
     private String name;
     private String subdivision;
 
@@ -30,6 +30,15 @@ public class Hospital {
                 "%d,\n" +
                 "\"%s\",\n" +
                 "\"%s\");", this.id, this.address, this.district, this.category, this.emergencyRoom, this.name, this.subdivision);
+        return sql;
+    }
+
+    public String getSqlInsertQuery2() {
+        String sql = String.format("INSERT INTO `likelion-db`.`seoul_hospital`(`id`,`address`,`district`,`category`,`emergency_room`,`name`,`subdivision`)\n" +
+                        "VALUES\n" +
+                        "(\"%s\",\"%s\",\n" +
+                        "\"%s\",\"%s\",%d,\"%s\",\"%s\");",
+                this.id, this.address, this.district, this.category, this.emergencyRoom, this.name, this.subdivision);
         return sql;
     }
 
@@ -74,4 +83,6 @@ public class Hospital {
     public String getSubdivision() {
         return subdivision;
     }
+
+
 }

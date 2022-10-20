@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileController<T> {
-
     Parser<T> parser;
     boolean isRemoveColumnName = true;
 
@@ -25,7 +24,7 @@ public class FileController<T> {
 
     List<T> readLines(String filename) throws IOException {
         List<T> result = new ArrayList<>();
-        BufferedReader br;
+        BufferedReader br; //= new BufferedReader(new FileReader(filename));
         br = Files.newBufferedReader(Paths.get(filename), StandardCharsets.UTF_8);
         String str;
         if (isRemoveColumnName) {
@@ -41,7 +40,7 @@ public class FileController<T> {
     public void createANewFile(String filename) throws IOException {
         File file = new File(filename);
         file.createNewFile();
-        System.out.println("파일생성결과:" + file.exists());
+        System.out.println("Have a file generated?:" + file.exists());
     }
 
     public void writeLines(List<String> lines, String filename) {
@@ -50,6 +49,7 @@ public class FileController<T> {
         try {
             BufferedWriter writer
                     = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "utf-8"));
+            // 한줄씩 쓰는 부분
             for (String str : lines) {
                 writer.write(str);
             }
@@ -57,6 +57,7 @@ public class FileController<T> {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("성공");
+        System.out.println("success");
     }
+
 }

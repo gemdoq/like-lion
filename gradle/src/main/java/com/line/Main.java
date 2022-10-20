@@ -10,16 +10,16 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws IOException {
         FileController<Hospital> hospitalFileController = new FileController<>(new HospitalParser());
-        String filename = "/Users/a/Downloads/서울시 병의원 위치 정보.csv";
+        String filename = "C:\\Users\\ocean\\Downloads\\seoul_hospital_infos.csv";
         List<Hospital> hospitals = hospitalFileController.readLines(filename);
 
-        System.out.println(hospitals.size());
-        List<String> lines = new ArrayList<>();
-        for (Hospital hospital : hospitals) {
-            lines.add(hospital.getSqlInsertQuery());
+        List<String> sqlStatements = new ArrayList<>();
+        for (Hospital hospital : hospitals){
+            sqlStatements.add(hospital.getSqlInsertQuery2());
         }
-        String sqlFilename = "hospital_insert.sql";
+        String sqlFilename = "seoul_hospital_insert.sql";
         hospitalFileController.createANewFile(sqlFilename);
-        hospitalFileController.writeLines(lines, sqlFilename);
+        hospitalFileController.writeLines(sqlStatements, sqlFilename);
+
     }
 }
