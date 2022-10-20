@@ -17,13 +17,10 @@ public class Stack02 {
 
     public void push(int value) {
         // 10 넣으면 arr[0] = 10
-        this.arr[top] = value;
-        this.top++;
+        this.arr[top++] = value;
     }
 
     public int pop() {
-        int value = this.arr[this.top-1];
-        this.top--;
-        return value;
+        return this.arr[--this.top];
     }
 }
