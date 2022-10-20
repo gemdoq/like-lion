@@ -54,11 +54,23 @@ class Stack02Test {
     }
 
     @Test
-    @DisplayName("what happen if pop when stack is empty")
-    void realStack() {
-        Stack<Integer> stack = new Stack<>();
-        assertThrows(EmptyStackException.class, ()-> {
-            stack02.pop();
+    void peek() {
+        Stack02 stack02 = new Stack02();
+        // peek() when stack is empty
+        assertThrows(EmptyStackException.class, ()->{
+            stack02.peek();
         });
+        stack02.push(10);
+        int peeked = stack02.peek();
+        assertEquals(10, peeked);
     }
+
+    //    @Test
+//    @DisplayName("what happen if pop when stack is empty")
+//    void realStack() {
+//        Stack<Integer> stack = new Stack<>();
+//        assertThrows(EmptyStackException.class, ()-> {
+//            stack02.pop();
+//        });
+//    }
 }
