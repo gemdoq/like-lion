@@ -11,6 +11,6 @@ class SolveBracket03Test {
     @DisplayName("is solvable bracket?")
     void bracket() {
         SolveBracket03 solveBracket03 = new SolveBracket03();
-        assertTrue(solveBracket03.solution("()()"));
+        assertTrue(solveBracket03.solution01("()()"));
     }
 }
