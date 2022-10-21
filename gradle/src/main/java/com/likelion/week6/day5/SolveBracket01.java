@@ -12,4 +12,9 @@ public class SolveBracket01 {
 //        System.out.println(r1);
 //        System.out.println(s.length());
     }
+
+    public static void main(String[] args) {
+        SolveBracket01 solveBracket01 = new SolveBracket01();
+        solveBracket01.solution(")()(");
+    }
 }
