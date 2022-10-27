@@ -22,7 +22,6 @@ public class Unfinished {
             //없으면 앞 배열의 다음 수가 포기자
             if (i == completion.length - 1) answer = participant[i + 1];
         }
-
         return answer;
     }
 
@@ -60,6 +59,8 @@ public class Unfinished {
         String[] comp = {"eden", "kiki"};
 
         Unfinished unfinished = new Unfinished();
-        unfinished.solution(part, comp);
+        String result = unfinished.solution2(part, comp);
+        //값이 맞게 문자열로 출력되는지 확인
+        System.out.println(result);
     }
 }
