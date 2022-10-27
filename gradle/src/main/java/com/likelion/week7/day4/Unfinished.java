@@ -26,6 +26,35 @@ public class Unfinished {
         return answer;
     }
 
+
+    public String solution2(String[] participant, String[] completion) {
+        //포기자 공백
+        String answer = "";
+
+        //키와 카운트값을 같이 보관하는 자료구조만들기(키와 값을 같이 보관하기 위해)
+        HashMap<String, Integer> map = new HashMap<>();
+
+        //앞 배열의 처음부터 끝까지 돌면서 중복되는 값은 제외하고 1 할당
+        for (String player : participant)
+            map.put(player, map.getOrDefault(player, 0) + 1);
+        //뒷 배열의 처음부터 끝까지 돌면서 이미 있는 값은 -1
+        for (String player : completion)
+            map.put(player, map.get(player) - 1);
+
+        //결과를 순서대로 볼 수 있는 자료구조에 담기(순서대로 검색하기 위해)
+        Iterator<Map.Entry<String, Integer>> iter = map.entrySet().iterator();
+        //반복문을 돌려서 카운트값 0이면 포기자로 설정
+        while(iter.hasNext()){
+            Map.Entry<String, Integer> entry = iter.next();
+            if (entry.getValue() != 0){
+                answer = entry.getKey();
+                break;
+            }
+        }
+        return answer;
+    }
+
+
     public static void main(String[] args) {
         String[] part = {"leo", "kiki", "eden"};
         String[] comp = {"eden", "kiki"};
