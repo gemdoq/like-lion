@@ -46,7 +46,7 @@ public class Hash01 {
     }
 
     public static void main(String[] args) {
-        String[] names = new String[]{"DongyeonKang",
+        String[] names = new String[]{"DongyeonKang", "Sumin", "Minsu",
                 "SubinKang", "KwanwunKo", "HyunseokKo", "KyoungdukKoo", "YeonjiGu", "SoyeonKown", "OhsukKwon", "GunwooKim", "KiheonKim", "NayeongKim", "DohyeonKim", "MinkyoungKim", "MinjiKim", "SanghoKim", "SolbaeKim", "YejinKim", "EungjunKim", "JaegeunKim", "JeonghyeonKim", "JunhoKim", "JisuKim", "kimjinah", "HaneulKim", "HeejungKim", "KimoonPark", "EunbinPark", "JeongHoonPark", "JeminPark", "TaegeunPark", "JiwonBae", "SeunggeunBaek", "JihwanByeon", "HeungseopByeon", "JeongHeeSeo", "TaegeonSeo", "SeeYunSeok", "SuyeonSeong", "SeyoelSon", "MinjiSong", "JinwooSong", "hyunboSim", "SominAhn", "JiyoungAhn", "ChangbumAn", "SoonminEom",
                 "HyeongsangOh", "SuinWoo", "JuwanWoo", "InkyuYoon", "GahyunLee", "DaonLee", "DohyunLee", "SanghunLee", "SujinLee", "AjinLee", "YeonJae", "HyeonjuLee", "HakjunYim", "SeoyunJang", "SeohyeonJang", "JinseonJang", "SujinJeon", "SeunghwanJeon", "DaehwanJung", "JaeHyunJeung", "HeejunJeong", "GukhyeonCho", "MunjuJo", "YejiJo", "ChanminJu", "MinjunChoi", "SujeongChoi", "SeunghoChoi", "AyeongChoi", "GeonjooHan", "JinhyuckHeo", "MinwooHwang", "SieunHwang",
                 "JunhaHwang"};
@@ -57,8 +57,8 @@ public class Hash01 {
 //            nameSet.add(hash01.hash(names[i]));
             hash01.insert(names[i], hash01.hash(names[i]));
         }
-        System.out.println(hash01.search("DongyeonKang"));
-        System.out.println(hash01.search("JiyoungAhn"));
+        System.out.println(hash01.search("Sumin"));
+        System.out.println(hash01.search("Minsu"));
 //        System.out.printf("%s %s",names.length, nameSet.size());
     }
 }

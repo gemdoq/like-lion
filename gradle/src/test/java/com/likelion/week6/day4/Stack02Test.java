@@ -60,9 +60,8 @@ class Stack02Test {
         assertThrows(EmptyStackException.class, ()->{
             stack02.peek();
         });
-        stack02.push(10);
-        int peeked = stack02.peek();
-        assertEquals(10, peeked);
+        stack02.push(50);
+        assertEquals(50, stack02.peek());
     }
 
     //    @Test
