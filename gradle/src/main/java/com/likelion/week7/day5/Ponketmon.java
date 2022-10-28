@@ -12,6 +12,7 @@ public class Ponketmon {
     //이터레이터로 만들어서 가장 큰 밸류를 가진 값을 answer에 할당
     //answer반환
     public int solution(int[] nums) {
+        //가져갈 수 있는 포켓몬 수
         int answer = 0;
         //포켓몬 종류 배열은 key, 포켓몬 갯수는 value
         Map<Integer, Integer> hashMap = new HashMap<>();
@@ -26,9 +27,10 @@ public class Ponketmon {
 
         //포켓몬 종류를 숫자로 변환
         int kind = hashMap.keySet().size();
-
+        //고른 포켓몬 종류가 주어진 배열/2보다 크다면 최대 가져갈 수 있는 포켓몬 수는 배열/2
         if(kind > nums.length/2) {
             answer = nums.length/2;
+        //배열/2보다 고른 포켓몬 종류가 적으면 그대로 가져갈 수 있다.
         } else {
             answer = kind;
         }
