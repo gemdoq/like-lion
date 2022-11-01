@@ -5,6 +5,7 @@ public class PrimeNumber {
     /*
     1번 방법 : 2부터 판별하는 수 전까지 나눠보고 나머지가 0이 안나온다면 소수
     2번 방법 : 주어진 숫자 / 2를 소숫점 버린 숫자까지 나누어 보고 나머지가 0이 아니면 소수
+    3번 방법 : 주어진 숫자의 제곱근까지 나누어 보고 나머지가 0이 아니면 소수
      */
 
     // 1번 방법
@@ -20,6 +21,14 @@ public class PrimeNumber {
         boolean answer = true;
 
         for(int i = 2; i < Math.floor(number/2); i++) { if(number % i == 0) answer = false; }
+        return answer;
+    }
+
+    // 3번 방법
+    public boolean solution3(int number) {
+        boolean answer = true;
+
+        for(int i = 2; i < Math.sqrt(number); i++) { if(number % i == 0) answer = false; }
         return answer;
     }
 
