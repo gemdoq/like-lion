@@ -3,12 +3,15 @@ package com.likelion.week8.day2;
 public class PrimeNumber {
 
     /*
-    문제입출력설정
+    1번 방법 : 2부터 판별하는 수 전까지 나눠보고 나머지가 0이 안나온다면 소수
      */
 
     public boolean solution(int number) {
-        boolean answer = false;
+        boolean answer = true;
 
+        for(int i=2; i<number; i++){
+            if(number % i == 0) answer = false;
+        }
         return answer;
     }
 
@@ -16,6 +19,6 @@ public class PrimeNumber {
         int number = 13;
 
         PrimeNumber primeNumber = new PrimeNumber();
-        System.out.printf("소수면 true, 아니면 false : %s", primeNumber.solution(number));
+        System.out.printf("주어진 수가 소수면 true, 아니면 false일 때, 주어진 수는 소수인가? 정답 : %s\n", primeNumber.solution(number));
     }
 }
