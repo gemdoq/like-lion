@@ -19,31 +19,31 @@ public class MockExam {
         int[] supoja2 = {2,1,2,3,2,4,2,5};
         int[] supoja3 = {3,3,1,1,2,2,4,4,5,5};
 
-        // 수포자들 성적표
-        int[] cnt = new int[3];
+        // 수포자들 성적표(수포자1, 수포자2, 수포자3)
+        int[] scoreCnt = new int[3];
 
-        // 순회하면서 탐색해서 일치하면 카운트증가
+        // 답안지의 요소를 순회탐색해서 정답자 답안과 일치하면 성적증가
         for(int i =0; i < answers.length; i++) {
-            if(answers[i] == supoja1[i%5]) cnt[0]++;
-            if(answers[i] == supoja2[i%8]) cnt[1]++;
-            if(answers[i] == supoja3[i%10]) cnt[2]++;
+            if(answers[i] == supoja1[i%5]) scoreCnt[0]++;
+            if(answers[i] == supoja2[i%8]) scoreCnt[1]++;
+            if(answers[i] == supoja3[i%10]) scoreCnt[2]++;
         }
 
         // 최댓값 구하기
-        int max = Math.max(cnt[0], Math.max(cnt[1], cnt[2]));
+        int max = Math.max(scoreCnt[0], Math.max(scoreCnt[1], scoreCnt[2]));
 
         // 최대 득점자 리스트
-        List<Integer> list = new ArrayList<>();
+        List<Integer> maximumScoreSupoja = new ArrayList<>();
 
         // max와 일치하면 리스트에 넣기
-        if(max == cnt[0]) list.add(1);
-        if(max == cnt[1]) list.add(2);
-        if(max == cnt[2]) list.add(3);
+        for(int i = 0; i < 3; i++) {
+            if(max == scoreCnt[i]) maximumScoreSupoja.add(i+1);
+        }
 
         // 최다 득점자를 인원수만큼 순서대로 배열에 담기
-        int[] answer = new int[list.size()];
-        for(int i = 0; i < list.size(); i++) {
-            answer[i] = list.get(i);
+        int[] answer = new int[maximumScoreSupoja.size()];
+        for(int i = 0; i < maximumScoreSupoja.size(); i++) {
+            answer[i] = maximumScoreSupoja.get(i);
         }
 
         return answer;
