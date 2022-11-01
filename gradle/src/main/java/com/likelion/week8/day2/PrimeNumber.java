@@ -24,10 +24,12 @@ public class PrimeNumber {
     }
 
     public static void main(String[] args) {
-        int number = 13;
+        int[] numbers = {13, 17, 19, 23, 25};
         PrimeNumber primeNumber = new PrimeNumber();
-        boolean checked = primeNumber.solution2(number);
 
-        System.out.printf("주어진 수가 소수면 true, 아니면 false일 때, 주어진 수는 소수인가? 정답 : %s\n", checked);
+        for(int number : numbers) {
+            boolean checked = primeNumber.solution2(number);
+            System.out.printf("주어진 수가 소수면 true, 아니면 false일 때, 주어진 수는 소수인가? 주어진 수 : %d, 정답 : %s\n", number, checked);
+        }
     }
 }
