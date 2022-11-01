@@ -1,6 +1,6 @@
 package com.likelion.week8.day2;
 
-public class PrimeNumberChecker {
+public class PrimeNumberChecker extends PrimeNumber{
 
     /*
     1번 방법 : 2부터 판별하는 수 전까지 나눠보고 나머지가 0이 안나온다면 소수
@@ -9,27 +9,18 @@ public class PrimeNumberChecker {
      */
 
     // 1번 방법
-    public boolean solution(int number) {
-        boolean answer = true;
-
-        for(int i = 2; i < number; i++) { if(number % i == 0) answer = false; }
-        return answer;
+    public boolean solution1(int number) {
+        return super.solution(number, num -> num);
     }
 
     // 2번 방법
     public boolean solution2(int number) {
-        boolean answer = true;
-
-        for(int i = 2; i <= Math.floor(number/2); i++) { if(number % i == 0) answer = false; }
-        return answer;
+        return  super.solution(number, num -> num / 2);
     }
 
     // 3번 방법
     public boolean solution3(int number) {
-        boolean answer = true;
-
-        for(int i = 2; i <= Math.sqrt(number); i++) { if(number % i == 0) answer = false; }
-        return answer;
+        return super.solution(number, num -> (int) Math.sqrt(num) + 1);
     }
 
     public static void main(String[] args) {
