@@ -20,7 +20,7 @@ public class PrimeNumber {
     public boolean solution2(int number) {
         boolean answer = true;
 
-        for(int i = 2; i < Math.floor(number/2); i++) { if(number % i == 0) answer = false; }
+        for(int i = 2; i <= Math.floor(number/2); i++) { if(number % i == 0) answer = false; }
         return answer;
     }
 
@@ -28,7 +28,7 @@ public class PrimeNumber {
     public boolean solution3(int number) {
         boolean answer = true;
 
-        for(int i = 2; i < Math.sqrt(number); i++) { if(number % i == 0) answer = false; }
+        for(int i = 2; i <= Math.sqrt(number); i++) { if(number % i == 0) answer = false; }
         return answer;
     }
 
@@ -37,7 +37,7 @@ public class PrimeNumber {
         PrimeNumber primeNumber = new PrimeNumber();
 
         for(int number : numbers) {
-            boolean checked = primeNumber.solution2(number);
+            boolean checked = primeNumber.solution3(number);
             System.out.printf("주어진 수가 소수면 true, 아니면 false일 때, 주어진 수는 소수인가? 주어진 수 : %d, 정답 : %s\n", number, checked);
         }
     }
