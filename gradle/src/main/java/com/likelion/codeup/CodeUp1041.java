@@ -1,4 +1,4 @@
-package com.likelion.week8.codeup;
+package com.likelion.codeup;
 
 import java.util.Scanner;
 
