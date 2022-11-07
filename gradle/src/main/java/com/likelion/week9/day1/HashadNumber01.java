@@ -16,7 +16,9 @@ public class HashadNumber01 {
             sumOfDigit += share % 10;
             share /= 10;
         }
-
+        if ( x%sumOfDigit == 0 ) {
+            answer = true;
+        }
         return answer;
     }
 
