@@ -2,6 +2,7 @@ package com.likelion.week9.day1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 public class DivisiveArray01 {
     public int[] solution(int[] arr, int divisor) {
@@ -29,11 +30,29 @@ public class DivisiveArray01 {
         return answer;
     }
 
+    public int[] solution2(int[] arr, int divisor) {
+        PriorityQueue<Integer> queue = new PriorityQueue<Integer>();
+
+        for(int i=0; i<arr.length; i++) {
+            if(arr[i]%divisor==0) queue.add(arr[i]);
+        }
+
+        if(queue.size() == 0) return new int[]{-1};
+
+        int[] answer = new int[queue.size()];
+        int index = 0;
+
+        while(!queue.isEmpty()) {
+            answer[index++] = queue.poll();
+        }
+        return answer;
+    }
+
     public static void main(String[] args) {
         int[] arr = new int[]{5,9,7,10};
         int divisor = 5;
 
         DivisiveArray01 divisiveArray01 = new DivisiveArray01();
-        System.out.println(Arrays.toString(divisiveArray01.solution(arr, divisor)));
+        System.out.println(Arrays.toString(divisiveArray01.solution2(arr, divisor)));
     }
 }
