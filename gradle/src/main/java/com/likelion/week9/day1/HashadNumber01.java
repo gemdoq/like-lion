@@ -7,7 +7,15 @@ public class HashadNumber01 {
     자릿수의 합을 구하고 원래의 수를 자릿수의 합으로 나머지를 0인 연산을 해서 트루값이라면 그건 하샤드의 수다.
      */
     public boolean solution(int x) {
-        boolean answer = true;
+        boolean answer = false;
+
+        int sumOfDigit = 0;
+        int share = x;
+
+        while ( share > 0 ) {
+            sumOfDigit += share % 10;
+            share /= 10;
+        }
 
         return answer;
     }
