@@ -3,6 +3,7 @@ package com.likelion.week9.day4;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
 public class HateTheSameNumber {
     public int[] solution(int[] arr) {
@@ -13,7 +14,8 @@ public class HateTheSameNumber {
         //처음 요소는 무조건 삽입
         list.add(arr[0]);
 
-        //처음 이후의 요소부터 모든 요소를 순회하면서 앞의 요소와 비교해서 다를 경우(=연속되는 값이 중복되지 않을 경우)
+        //처음 이후의 요소부터 모든 요소를 순회하면서
+        //앞의 요소와 비교해서 다를 경우(=연속되는 값이 중복되지 않을 경우)
         //list에 삽입하는 반복문
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] != arr[i - 1]) {
@@ -29,10 +31,33 @@ public class HateTheSameNumber {
         return answer;
     }
 
-    public static void main(String[] args) {
+    public int[] solution2(int[] arr) {
+        int[] answer = {};
+        //배열의 길이가 얼마나 늘어날지 모르므로 가변 자료구조인 stack 선언
+        Stack<Integer> stack = new Stack<Integer>();
+
+        //처음 요소를 삽입
+        stack.push(arr[0]);
+
+        //배열의 요소를 순회하면서 peek으로 보고 다를 경우 stack에 추가
+        for(int i = 1; i < arr.length; i++) {
+            if(stack.peek() != arr[i]) { stack.push(arr[i]); }
+        }
+
+        //stack크기만큼의 배열을 할당
+        answer = new int[stack.size()];
+
+        //stack의 요소를 순회하면서 answer 배열에 삽입
+        for(int i = 0; i < stack.size(); i++) {
+            answer[i] = stack.get(i);
+        }
+        return answer;
+    }
+
+        public static void main(String[] args) {
         HateTheSameNumber hateTheSameNumber = new HateTheSameNumber();
         int[] arr = {1, 1, 3, 3, 0, 1, 1};
-        int[] result = hateTheSameNumber.solution(arr);
+        int[] result = hateTheSameNumber.solution2(arr);
         System.out.println(Arrays.toString(result));
     }
 }
