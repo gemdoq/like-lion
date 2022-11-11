@@ -3,9 +3,8 @@ package com.likelion.week9.day5;
 import java.util.Arrays;
 
 public class SecretMap01 {
-    public String[] solution(int n, int[] arr1, int[] arr2) {
-        String[] answer = {};
-        /*
+    /*
+    솔루션1 :
         배열의 각 요소를 2진법으로 변환
         변환한 요소를 각각 배열로 변환해서 자릿수별로 자르기
         자른 arr1의 배열요소와 같은 index의 arr2의 배열요소를 비교
@@ -13,6 +12,22 @@ public class SecretMap01 {
         그 결과값을 true면 #으로, false면 공백으로 전환해서 연결
         각 index를 돌며 배열에 담기
          */
+    public String getBinaryString(int decNum) {
+        String reverseBinaryString = "";
+        String binaryString = "";
+        while(decNum > 0) {
+            reverseBinaryString += decNum % 2;
+            decNum /= 2;
+        }
+
+        for(int i = 0; i < reverseBinaryString.length(); i++) {
+            binaryString += reverseBinaryString.charAt(reverseBinaryString.length() - 1- i));
+        }
+    }
+
+    public String[] solution(int n, int[] arr1, int[] arr2) {
+        String[] answer = {};
+
         return answer;
     }
 
