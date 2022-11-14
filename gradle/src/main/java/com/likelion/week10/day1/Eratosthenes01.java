@@ -12,7 +12,7 @@ public class Eratosthenes01 {
         }
         System.out.println(Arrays.toString(arr));
 
-        for (int i = 0; i < arr.length; i+=2) {
+        for (int i = 2; i < arr.length; i+=2) {
             arr[i] = 0;
         }
         System.out.println(Arrays.toString(arr));
