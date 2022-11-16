@@ -6,6 +6,7 @@ public class RecursiveQuickSort02 {
     public static void main(String[] args) {
         int[] unsortedArray = {20,18,5,19,5,25,40,50};
         RecursiveQuickSort02 recursiveQuickSort02 = new RecursiveQuickSort02();
+        System.out.printf("원   래    배   열 : %s\n", Arrays.toString(unsortedArray));
 
         int[] sortedArray = recursiveQuickSort02.sort(unsortedArray);
 
@@ -22,14 +23,17 @@ public class RecursiveQuickSort02 {
         int pivotIndex = unsortedArray.length/2;
         int pivotValue = unsortedArray[pivotIndex];
         System.out.println(pivotValue);
+
         // leftIndex
         int leftIndex = 0;
         while( leftIndex < pivotValue) leftIndex += 1;
         System.out.println(leftIndex);
+
         // rightIndex
         int rightIndex = unsortedArray.length - 1;
         while( rightIndex > pivotValue) rightIndex -= 1;
         System.out.println(rightIndex);
+
         // swap
         swap(unsortedArray, leftIndex, rightIndex);
 
