@@ -16,18 +16,25 @@ public class RecursiveQuickSort02 {
 
     public int[] sort(int[] unsortedArray) {
 
+        System.out.printf("현재 주어진 배열 상태 : %s\n", Arrays.toString(unsortedArray));
+
+        // pivotValue
         int pivotIndex = unsortedArray.length/2;
         int pivotValue = unsortedArray[pivotIndex];
         System.out.println(pivotValue);
-
+        // leftIndex
         int leftIndex = 0;
         while( leftIndex < pivotValue) leftIndex += 1;
         System.out.println(leftIndex);
-
+        // rightIndex
         int rightIndex = unsortedArray.length - 1;
-        while( rightIndex >= pivotValue) rightIndex -= 1;
+        while( rightIndex > pivotValue) rightIndex -= 1;
         System.out.println(rightIndex);
+        // swap
+        swap(unsortedArray, leftIndex, rightIndex);
 
+        System.out.printf("4:%d 7:%d\n", unsortedArray[4], unsortedArray[7]);
+        System.out.printf("현재 주어진 배열 상태 : %s\n", Arrays.toString(unsortedArray));
 //        int[] lowerList = new int[];
 //        int[] higherList = new int[];
 //
@@ -35,7 +42,13 @@ public class RecursiveQuickSort02 {
 //        System.out.printf("현재 Pivot이하 배열은 : %s\n", Arrays.toString(lowerList));
 //        System.out.printf("현재 Pivot이상 배열은 : %s\n", Arrays.toString(higherList));
 
-        int[] answer = new int[];
+        int[] answer = new int[unsortedArray.length];
         return answer;
+    }
+
+    public void swap(int[] arr, int a, int b) {
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
     }
 }
