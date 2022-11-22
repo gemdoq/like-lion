@@ -18,6 +18,8 @@ public class ListSum {
     public static int sum(List<Integer> nums) {
         if(nums.isEmpty()) return 0;
 
-        return sum(nums);
+        int last = nums.remove(nums.size() - 1);
+
+        return last + sum(nums);
     }
 }
