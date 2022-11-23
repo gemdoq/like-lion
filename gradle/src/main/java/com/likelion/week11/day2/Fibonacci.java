@@ -8,13 +8,13 @@ public class Fibonacci {
         Fibonacci fibonacci = new Fibonacci();
         int index = 10;
         int result = fibonacci.calc(index);
-        System.out.printf("%d\n", result);
+        System.out.printf("%d%n", result);
     }
 
     public int calc(int index) {
         if(index == 1 || index == 2) return 1;
 
-        List<Integer> fibonacciNums = new ArrayList<Integer>();
+        List<Integer> fibonacciNums = new ArrayList<>();
         fibonacciNums.add(1);
         fibonacciNums.add(1);
         for (int i = 2; i < index; i++) {

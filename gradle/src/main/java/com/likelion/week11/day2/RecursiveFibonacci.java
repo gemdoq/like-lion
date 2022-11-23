@@ -4,7 +4,7 @@ public class RecursiveFibonacci {
     public static void main(String[] args) {
         RecursiveFibonacci recursiveFibonacci = new RecursiveFibonacci();
         int index = 10;
-        int result = recursiveFibonacci.calc(10);
+        int result = recursiveFibonacci.calc(index);
         System.out.printf("%d", result);
     }
 
