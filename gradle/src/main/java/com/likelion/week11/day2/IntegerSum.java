@@ -6,7 +6,7 @@ public class IntegerSum {
         System.out.printf("%d", integerSum.sum(5));
     }
 
-    public Integer sum(int num) {
+    public int sum(int num) {
         if(num == 0) return num;
         return num + sum(num - 1);
     }
