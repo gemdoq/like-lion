@@ -9,7 +9,9 @@ public class EuclideanGCD01 {
         System.out.printf("%d%n", result);
     }
 
-    public static int gcd(int a, int b) {
-        return 0;
+    private static int gcd(int a, int b) {
+        if(a == b) return a;
+        if(a > b) return gcd(b, a);
+        return gcd(a, b - a);
     }
 }
