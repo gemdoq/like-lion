@@ -1,4 +1,4 @@
-package com.likelion.week12;
+package com.likelion.week12.day1;
 
 public class AlphabetPrint04 {
     public static void main(String[] args) {
