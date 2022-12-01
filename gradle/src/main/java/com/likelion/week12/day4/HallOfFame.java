@@ -38,7 +38,7 @@ public class HallOfFame {
         ArrayList<Integer> honorList = new ArrayList<>();
         ArrayList<Integer> removeList = new ArrayList<>();
         for (int i = 0; i < score.length; i++) {
-            if (i > k- 1) {
+            if (i >= k) {
                 if (score[i] > honorList.get(0)) {
                     honorList.add(score[i]);
                     honorList.remove(honorList.get(0));
