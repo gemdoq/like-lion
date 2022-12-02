@@ -13,6 +13,5 @@ public class PrimeFactorization01 {
                 n /= i;
             }
         }
-        if (n != 1) System.out.printf("%d", n);
     }
 }
