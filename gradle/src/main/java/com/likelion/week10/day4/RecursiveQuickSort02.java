@@ -16,7 +16,7 @@ public class RecursiveQuickSort02 {
     }
 
     public int[] sort(int[] unsortedArray) {
-         System.out.printf("현재 주어진 배열 상태 : %s\n", Arrays.toString(unsortedArray));
+        System.out.printf("현재 주어진 배열 상태 : %s\n", Arrays.toString(unsortedArray));
 
         // pivotValue
         int pivotIndex = unsortedArray.length / 2;
@@ -42,7 +42,7 @@ public class RecursiveQuickSort02 {
         return unsortedArray;
     }
 
-    public static void swap(int[] arr, int a, int b) {
+    private static void swap(int[] arr, int a, int b) {
         int temp = arr[a];
         arr[a] = arr[b];
         arr[b] = temp;
